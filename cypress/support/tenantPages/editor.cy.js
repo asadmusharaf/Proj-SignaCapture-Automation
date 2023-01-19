@@ -323,7 +323,9 @@ export class signa_editor {
             .should('equal', 'Width (px)');
         this.editor.widthfield()
             .type('305');
+
         cy.wait(2000);
+        
         this.editor.chng_canvas_modal_height()
             .clear()
             .invoke('attr', 'placeholder')
