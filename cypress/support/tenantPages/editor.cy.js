@@ -72,7 +72,7 @@ export class signa_editor {
         rect_xposition: () => cy.xpath("//input[@id='editor-rectangle-xPosition']"),
         rect_yposition: () => cy.xpath("//input[@id='editor-rectangle-yPosition']"),
         rect_setbg_txt: () => cy.xpath("//p[normalize-space()='Set Background Color']"),
-        rect_setbg: () => cy.xpath("//body/div[@role='presentation']/div/ul/div[2]/div[1]"),
+        rect_setbg: () => cy.xpath("//body/div[@role='presentation']/div[3]/ul[1]/div[1]/div[1]"),
         rect_bg_color_input: () => cy.xpath("//input[@id='rc-editable-input-42']"),
         rect_bg_color_red: () => cy.xpath("//div[@title='#D0021B']"),
         rect_setcorner_radius_txt: () => cy.xpath("//p[normalize-space()='Set Corner Radius']"),
@@ -152,7 +152,7 @@ export class signa_editor {
         text_alignment_center: () => cy.xpath("//button[@value='center']"),
         text_alignment_right: () => cy.xpath("//button[@value='right']"),
         text_font_color_txt: () => cy.xpath("//p[normalize-space()='Set Font Color']"),
-        text_font_color: () => cy.xpath("//body[1]/div[4]/div[3]/div[2]/ul[1]/div[5]/div[1]"),
+        text_font_color: () => cy.xpath("//body[1]/div[4]/div[3]/div[2]/ul[1]/div[3]/div[1]"),
         text_font_color_white: () => cy.xpath("//div[@title='#FFFFFF']"),
         text_font_color_black: () => cy.xpath("//div[@title='#000000']"),
         text_properties_tab: () => cy.xpath("//span[normalize-space()='properties']"),
@@ -171,7 +171,7 @@ export class signa_editor {
         qr_height: () => cy.xpath("//input[@id='editor-rectangle-height']"),
         qr_xposition: () => cy.xpath("//input[@id='editor-rectangle-xPosition']"),
         qr_yposition: () => cy.xpath("//input[@id='editor-rectangle-yPosition']"),
-        qr_value: () => cy.xpath("//body/div[@role='presentation']/div/ul/div/div/div/input[1]"),
+        qr_value: () => cy.xpath("(//input[@type='text'])[5]"),
         qr_template_field: () => cy.xpath("//span[normalize-space()='Template Field']"),
         qr_del_btn: () => cy.xpath("//span[normalize-space()='delete selection']"),
         qr_edit_styles_tab: () => cy.xpath("//span[normalize-space()='Edit styles']"),
@@ -545,9 +545,9 @@ export class signa_editor {
             .clear()
             .type('42')
 
-        this.editor.circle_height()
-            .clear()
-            .type('42');
+        // this.editor.circle_height()
+        //     .clear()
+        //     .type('42');
 
         this.editor.circle_xposition()
             .clear()
