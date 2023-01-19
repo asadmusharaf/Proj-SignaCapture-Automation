@@ -345,7 +345,7 @@ export class signa_editor {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
         cy.wait(3000)
-        
+
         this.editor.menu_background()
             .click();
 
@@ -682,7 +682,6 @@ export class signa_editor {
             .click(0, 0);
 
         cy.wait(2000)
-
 
     }
 
