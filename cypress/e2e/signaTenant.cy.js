@@ -242,7 +242,6 @@ describe('Signa Capture Tenant Sanity Suite',
 
         });
 
-
         it('Generate and Preview the Banner With Signature', function () {
             editor.previewEditorBanner();
             editor.viewGeneratedImages();
