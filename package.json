@@ -1,0 +1,24 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "html-report-admin": "cypress run --spec cypress/e2e/signaAdmin.cy.js --browser chrome --headed",
+    "html-report-tenant": "cypress run --spec cypress/e2e/signaTenant.cy.js --browser chrome --headed"
+  },
+  "author": "Asad",
+  "license": "ISC",
+  "devDependencies": {
+    "cy-verify-downloads": "^0.1.11",
+    "cypress": "^10.11.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.7.4",
+    "dayjs": "^1.11.7"
+  }
+}

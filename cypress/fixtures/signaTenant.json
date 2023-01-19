@@ -1,0 +1,44 @@
+{
+    "stageURL": "https://stage.signacapture.com/",
+
+    "forgetpasswordemail": "testdsfsdf@test.com",
+
+    "email": "asad.musharaf@devigital.com",
+    "password": "12345678",
+    "invalidpswrd": "123456789",
+
+    "pfirstname": "Asad",
+    "plastname":"Musharaf",
+
+    "Jobname": "demo job",
+    "jobdesc": "This is sample text from cypress json fixture file",
+    "jobemail": "asad.musharaf@devgigital.com",
+    "jobphone": "1234567890",
+
+
+    "edit_Jobname": "demo job edited",
+    "edit_jobdesc": "This is sample text from cypress json fixture file edited",
+    "edit_jobemail": "asad.musharafedited@devgigital.com",
+    "edit_jobphone": "1234567890",
+
+
+    "addusr_firstname": "Automation Test user",
+    "addusr_lastname": "1",
+    "adduser_email": "signa",
+    "addusr_pswrd": "1234567890",
+    "addusr_contact": "1234567890",
+    "addusr_searchquery": "demo",
+    
+    "editusr_firstname": "Automation Test user",
+    "editusr_lastname": "1",
+    "editusr_email": "signa",
+    "editusr_pswrd": "1234567890",
+    "editusr_contact": "1234567890",
+    "editusr_searchquery": "demo"
+    
+   
+
+
+}
+
+

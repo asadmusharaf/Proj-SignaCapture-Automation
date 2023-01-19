@@ -1,0 +1,19 @@
+{
+
+    "stageURL": "http://signa-admin-staging.s3-website-us-east-1.amazonaws.com/",
+    "invalidEmail": "test",
+    "invalidpassword": "123",
+    "email": "qaadmin@signa.com",
+    "password": "12345678",
+
+
+
+    "templateName": "Automation Template",
+    "tname": "Name",
+    "temail": "Email",
+    "tmessage": "Message",
+    "tdate": "Date",
+    "tuploadimg": "Upload Image",
+    "tdrawsign": "Draw You Signature"
+
+}
