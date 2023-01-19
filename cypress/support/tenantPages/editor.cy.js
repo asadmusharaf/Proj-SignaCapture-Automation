@@ -325,7 +325,7 @@ export class signa_editor {
             .type('305');
 
         cy.wait(2000);
-        
+
         this.editor.chng_canvas_modal_height()
             .clear()
             .invoke('attr', 'placeholder')
@@ -345,9 +345,7 @@ export class signa_editor {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
         cy.wait(3000)
-        //const img = 'image.png'
-        // cy.xpath(this.uploadimagearea).attachFile(img)
-
+        
         this.editor.menu_background()
             .click();
 
