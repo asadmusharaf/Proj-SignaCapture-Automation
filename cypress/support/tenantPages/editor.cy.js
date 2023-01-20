@@ -72,7 +72,7 @@ export class signa_editor {
         rect_xposition: () => cy.xpath("//input[@id='editor-rectangle-xPosition']"),
         rect_yposition: () => cy.xpath("//input[@id='editor-rectangle-yPosition']"),
         rect_setbg_txt: () => cy.xpath("//p[normalize-space()='Set Background Color']"),
-        rect_setbg: () => cy.xpath("//body/div[@role='presentation']/div[3]/ul[1]/div[1]/div[1]"),
+        rect_setbg: () => cy.xpath("//body/div[@role='presentation']/div/ul/div[2]/div[1]"),
         rect_bg_color_input: () => cy.xpath("//input[@id='rc-editable-input-42']"),
         rect_bg_color_red: () => cy.xpath("//div[@title='#D0021B']"),
         rect_setcorner_radius_txt: () => cy.xpath("//p[normalize-space()='Set Corner Radius']"),
@@ -171,8 +171,10 @@ export class signa_editor {
         qr_height: () => cy.xpath("//input[@id='editor-rectangle-height']"),
         qr_xposition: () => cy.xpath("//input[@id='editor-rectangle-xPosition']"),
         qr_yposition: () => cy.xpath("//input[@id='editor-rectangle-yPosition']"),
-        qr_value: () => cy.xpath("(//input[@type='text'])[5]"),
+        qr_value: () => cy.xpath("//body/div[@role='presentation']/div/ul/div/div/div/input[1]"),
         qr_template_field: () => cy.xpath("//span[normalize-space()='Template Field']"),
+        qr_template_dropdown: () => cy.xpath("//div[contains(text(),'Select Template Field')]"),
+        qr_template_dropdown_firstname: () => cy.xpath("//div[contains(text(),'First Name')]"),
         qr_del_btn: () => cy.xpath("//span[normalize-space()='delete selection']"),
         qr_edit_styles_tab: () => cy.xpath("//span[normalize-space()='Edit styles']"),
         qr_error_resistance_txt: () => cy.xpath("//p[normalize-space()='Error resistance Level']"),
@@ -868,10 +870,24 @@ export class signa_editor {
             .clear()
             .type('416');
 
-        this.editor.qr_value()
-            .type('Automation');
+        cy.get('body')
+            .click(0, 0);
 
-        cy.wait(2000)
+        cy.wait(2000);
+
+        this.editor.qr_code()
+            .dblclick();
+
+        this.editor.qr_template_field()
+            .click();
+
+        this.editor.qr_template_dropdown()
+            .click();
+
+        this.editor.qr_template_dropdown_firstname()
+            .click();
+
+        cy.wait(2000);
 
         cy.get('body')
             .click(0, 0);

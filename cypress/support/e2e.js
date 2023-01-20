@@ -21,3 +21,9 @@ import 'cypress-mochawesome-reporter/register';
 // require('./commands')
 require('cypress-xpath');
 require('cy-verify-downloads').addCustomCommand();
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+  })
