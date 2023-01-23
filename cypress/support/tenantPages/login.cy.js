@@ -103,7 +103,7 @@ export class tenant_login {
     verifyLoginIsSuccessful() {
         this.tlogin.signalogo()
             .should('have.css', 'width', '250.00001525878906px')
-            .and('have.css', 'height', '50px.000003814697266');
+            .and('have.css', 'height', '50.000003814697266');
 
         this.tlogin.welcomemsg()
             .should('contain.text', 'Welcome , Asad');
