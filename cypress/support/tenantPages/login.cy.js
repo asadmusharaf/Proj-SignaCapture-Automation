@@ -18,7 +18,6 @@ export class tenant_login {
         logout_icon: () => cy.xpath("//button[@title='Logout']"),
         profile_logout_tooltip: () => cy.xpath("//button[contains(@aria-describedby,'mui-')]"),
  
-        
     }
 
 
