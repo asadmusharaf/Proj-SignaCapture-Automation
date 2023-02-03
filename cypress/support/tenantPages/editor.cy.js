@@ -72,13 +72,14 @@ export class signa_editor {
         rect_xposition: () => cy.xpath("//input[@id='editor-rectangle-xPosition']"),
         rect_yposition: () => cy.xpath("//input[@id='editor-rectangle-yPosition']"),
         rect_setbg_txt: () => cy.xpath("//p[normalize-space()='Set Background Color']"),
-        rect_setbg: () => cy.xpath("//body/div[@role='presentation']/div/ul/div[2]/div[1]"),
+        rect_setbg: () => cy.xpath("//body/div[@role='presentation']/div/div/div/div/div[1]"),
         rect_bg_color_input: () => cy.xpath("//input[@id='rc-editable-input-42']"),
         rect_bg_color_red: () => cy.xpath("//div[@title='#D0021B']"),
         rect_setcorner_radius_txt: () => cy.xpath("//p[normalize-space()='Set Corner Radius']"),
         rect_setcorner_radius_slider: () => cy.xpath("//body/div[@role='presentation']/div/ul/div/span[1]"),
         rect_lock_aspect_ratio: () => cy.xpath("//span[normalize-space()='Lock Aspect Ratio']"),
         rect_del_btn: () => cy.xpath("//span[normalize-space()='delete selection']"),
+        rect_edit_styles_tab: () => cy.xpath("//span[normalize-space()='Edit Styles']"),
 
         element_circle: () => cy.xpath("//span[normalize-space()='Circle']"),
         circle: () => cy.xpath("//div[@id='circleElement0']"),
@@ -466,6 +467,9 @@ export class signa_editor {
             .clear()
             .type('89');
 
+        this.editor.rect_edit_styles_tab()
+            .click();
+
         this.editor.rect_setbg()
             .click()
 
@@ -506,6 +510,9 @@ export class signa_editor {
         this.editor.rect_height()
             .clear()
             .type('42');
+
+        this.editor.rect_edit_styles_tab()
+            .click();
 
         this.editor.rect_setbg()
             .click()
