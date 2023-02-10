@@ -238,9 +238,15 @@ describe('Signa Capture Tenant Sanity Suite',
         });
 
         it('Add a QR code to canvas design', function () {
+            editor.addQRcode();
+
+        });
+
+        it('Add a Barcode to canvas design', function () {
             editor.addBarcode();
 
         });
+
 
         it('Generate and Preview the Banner With Signature', function () {
             editor.previewEditorBanner();

@@ -190,6 +190,20 @@ export class signa_editor {
 
 
         menu_barcode: () => cy.xpath("//div[@title='Bar Code']//img"),
+        barcode: () => cy.xpath("(//*[name()='rect'])[2]"),
+        barcode_properties_tab: () => cy.xpath("//span[normalize-space()='properties']"),
+        barcode_editstyles_tab: () => cy.xpath("//span[normalize-space()='Edit styles']"),
+        barcode_width: () => cy.xpath("//input[@id='editor-rectangle-width']"),
+        barcode_height: () => cy.xpath("//input[@id='editor-rectangle-height']"),
+        barcode_xposition: () => cy.xpath("//input[@id='editor-rectangle-xPosition']"),
+        barcode_yposition: () => cy.xpath("//input[@id='editor-rectangle-yPosition']"),
+        barcode_value: () => cy.xpath("//input[@placeholder='Enter barcode value']"),
+        barcode_template: () => cy.xpath("//span[normalize-space()='Template Field']"),
+        barcode_template_dropdown: () => cy.xpath("//div[contains(text(),'Select Template Field')]"),
+        barcode_template_dropdown_email: () => cy.xpath("//div[normalize-space()='Email']"),
+        barcode_del_btn: () => cy.xpath("//span[normalize-space()='delete selection']"),
+
+
 
         menu_clear: () => cy.xpath("//div[@title='Clear']//*[name()='svg']"),
         clear_modal_title: () => cy.xpath("//h3[normalize-space()='Whoa! Be careful']"),
@@ -848,7 +862,7 @@ export class signa_editor {
 
     }
 
-    addBarcode() {
+    addQRcode() {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
         this.editor.menu_qr()
@@ -906,6 +920,53 @@ export class signa_editor {
 
         this.editor.img_final_image_remove_btn()
             .click();
+    }
+    addBarcode() {
+        localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
+
+        this.editor.menu_barcode()
+            .click();
+
+        cy.wait(2000);
+
+        this.editor.barcode()
+            .dblclick({force:true});
+
+        this.editor.barcode_xposition()
+            .clear()
+            .type('9');
+
+        this.editor.barcode_yposition()
+            .clear()
+            .type('372');
+
+        this.editor.barcode_width()
+            .clear()
+            .type('63');
+
+        this.editor.barcode_height()
+            .clear()
+            .type('65');
+
+        cy.wait(2000);
+
+        this.editor.barcode_template()
+            .click();
+
+        this.editor.barcode_template_dropdown()
+            .click();
+
+        this.editor.barcode_template_dropdown_email()
+            .click()
+
+        cy.get('body')
+            .click(0, 0);
+
+        cy.get('body')
+            .click(0, 0);
+
+        cy.wait(2000)
+
     }
 
     previewEditorBanner() {
