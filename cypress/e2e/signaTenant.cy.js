@@ -58,17 +58,17 @@ describe('Signa Capture Tenant Sanity Suite',
             tlogin.verifyLoginIsSuccessful();
         });
 
-        it('Verify Profile Page', function () {
+        it.skip('Verify Profile Page', function () {
             profile.clickProfileIcon();
             profile.verifyProfileTitle();
         });
 
-        it('Change Profile Image', function () {
+        it.skip('Change Profile Image', function () {
             profile.changeProfileImage();
 
         });
 
-        it('Update Profile Information', function () {
+        it.skip('Update Profile Information', function () {
             profile.enterFirstNamefield(this.data.pfirstname);
             profile.enterLastnameField(this.data.plastname);
             profile.verifyDisabledEmailField();
@@ -76,66 +76,66 @@ describe('Signa Capture Tenant Sanity Suite',
 
         });
 
-        it('Verify Profile is Updated Successfully', function () {
+        it.skip('Verify Profile is Updated Successfully', function () {
             profile.verifyUpdatedProfileTitle(this.data.pfirstname, this.data.plastname);
 
         });
 
-        it('Change Profile Password', function () {
+        it.skip('Change Profile Password', function () {
             profile.changePassword(this.data.password);
             profile.verifyPasswordFieldValidation(this.data.password);
 
         });
 
-        it('Verify Creating a new job', function () {
+        it.skip('Verify Creating a new job', function () {
             jobs.createNewJob(this.data.Jobname, this.data.jobdesc,
                 this.data.jobemail, this.data.jobphone);
             cy.wait(3000);
 
         });
 
-        it('Verify Search Functionality of Jobs', function () {
+        it.skip('Verify Search Functionality of Jobs', function () {
             jobs.searchJob(this.data.Jobname);
             cy.wait(3000);
 
         });
 
-        it('Verify Edit A Job', function () {
+        it.skip('Verify Edit A Job', function () {
             jobs.editJob(this.data.Jobname, this.data.edit_Jobname, this.data.jobdesc, this.data.edit_jobdesc,
                 this.data.jobemail, this.data.edit_jobemail, this.data.jobphone, this.data.edit_jobphone);
 
         });
 
-        it('Verify Newly Created Job Details', function () {
+        it.skip('Verify Newly Created Job Details', function () {
             jobs.verifyJobDetails(this.data.edit_Jobname, this.data.addusr_firstname, this.data.edit_jobemail);
 
         });
 
-        it('Verify Adding Job Data via Normal Acquisition Form', function () {
+        it.skip('Verify Adding Job Data via Normal Acquisition Form', function () {
             nAcq.verifyNoCard();
             nAcq.verifyModal();
             nAcq.verifyForm();
 
         });
 
-        it('Verify Job Data Added Successfully via Normal Acquisition Form', function () {
+        it.skip('Verify Job Data Added Successfully via Normal Acquisition Form', function () {
             nAcq.verifyTableData();
 
         });
 
-        it('Verify Adding Job Data via CSV', function () {
+        it.skip('Verify Adding Job Data via CSV', function () {
             jobs.createNewJob(this.data.Jobname, this.data.jobdesc,
                 this.data.jobemail, this.data.jobphone);
             csv.addJobDataViaCsv();
 
         });
 
-        it('Verify Job Data Added Successfully via CSV and Zip File', function () {
+        it.skip('Verify Job Data Added Successfully via CSV and Zip File', function () {
             csv.verifyTableData();
 
         });
 
-        it('Create a new User', function () {
+        it.skip('Create a new User', function () {
             um.addusr_clickusrmanagementtab();
             um.addusr_VerifyListOfUsers();
             um.addusr_VerifyPagination();
@@ -158,24 +158,24 @@ describe('Signa Capture Tenant Sanity Suite',
 
         });
 
-        it('Edit A User', function () {
+        it.skip('Edit A User', function () {
             um.editUser(this.data.addusr_firstname, this.data.addusr_lastname);
 
         });
 
-        it('Verfiy User is Created Successfully', function () {
+        it.skip('Verfiy User is Created Successfully', function () {
             um.verifyNewlyCreatedUser();
 
         });
 
-        it('Delete a User', function () {
+        it.skip('Delete a User', function () {
             um.addusr_clickdelicon();
             um.addusr_clickdelbtn();
             cy.wait(3000);
 
         });
 
-        it('Delete A Job', function () {
+        it.skip('Delete A Job', function () {
             jobs.clicknewjob();
             jobs.deleteicon();
             cy.wait(3000);

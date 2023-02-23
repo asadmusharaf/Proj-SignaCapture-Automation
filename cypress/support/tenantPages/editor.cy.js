@@ -27,7 +27,7 @@ export class signa_editor {
         chng_canvas_modal_cancel_btn: () => cy.xpath("//span[normalize-space()='cancel']"),
 
         //Editor Menu
-        menu_background: () => cy.xpath("//div[@value='background']//*[name()='svg']"),
+        menu_background: () => cy.xpath("//div[@value='background']"),
         bg_change_color: () => cy.xpath("//span[normalize-space()='Change Background Color']"),
         palette_title: () => cy.xpath("//h3[normalize-space()='Change Color']"),
         palette_color_bar: () => cy.xpath("//div[@class='hue-horizontal']"),
@@ -352,6 +352,7 @@ export class signa_editor {
 
         this.editor.chng_canvas_modal_cancel_btn()
             .should('have.text', 'cancel');
+
         this.editor.chng_canvas_modal_save_btn()
             .should('not.be.disabled')
             .click();
@@ -361,12 +362,13 @@ export class signa_editor {
     uploadimage() {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
-        cy.wait(3000)
+        cy.wait(3000);
 
         this.editor.menu_background()
             .click();
 
         this.editor.bg_change_image()
+            .should('have.text', 'Change Background Image')
             .click();
 
         this.editor.bg_upload_modal_title()
@@ -378,6 +380,7 @@ export class signa_editor {
             });
 
         this.editor.bg_image_upload_btn()
+            .should('have.text', 'Upload')
             .click();
     }
     change_BG_Color() {
@@ -387,12 +390,15 @@ export class signa_editor {
             .click();
 
         this.editor.bg_change_color()
+            .should('have.text', 'Change Background Color')
             .click();
 
         this.editor.palette_color_bar()
+            .should('be.visible')
             .click();
 
         this.editor.palette_change_btn()
+            .should('have.text', 'Change')
             .click();
 
     }
@@ -401,56 +407,78 @@ export class signa_editor {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
         cy.wait(3000);
+
         this.editor.menu_select()
-            .should('be.visible')
             .click();
 
         this.editor.select_box()
+            .should('be.visible')
             .dblclick();
 
         this.editor.select_xposition()
+            .invoke('attr', 'id')
+            .should('equal', 'editor-rectangle-xPosition');
+
+        this.editor.select_xposition()
             .clear()
-            .type('12')
+            .type('12');
+
+        this.editor.select_yposition()
+            .invoke('attr', 'id')
+            .should('equal', 'editor-rectangle-yPosition');
 
         this.editor.select_yposition()
             .clear()
-            .type('280')
+            .type('280');
 
         this.editor.select_data_tab()
+            .should('have.text', 'data')
             .click();
 
         this.editor.select_tempfiles_dropdown()
+            .should('have.text', 'Select Data File')
             .click();
 
         this.editor.tempfiles_dropdown_upload()
+            .should('have.text', 'Image Upload')
             .click();
 
         this.editor.select_data_next_btn()
+            .should('have.text', 'Next')
             .click();
-        cy.wait(2000)
-        this.editor.select_data_next_btn()
-            .click();
-        cy.wait(2000)
+
+        cy.wait(2000);
 
         this.editor.select_data_next_btn()
+            .should('have.text', 'Next')
+            .click();
+
+        cy.wait(2000);
+
+        this.editor.select_data_next_btn()
+            .should('have.text', 'Next')
             .click();
 
         this.editor.select_data_dropdown()
+            .should('have.text', 'Select Job Data')
             .click();
 
         this.editor.data_dropdown_printall()
+            .should('have.text', 'Print all job data')
             .click();
 
         cy.get('body')
             .click(0, 0);
 
         this.editor.select_data_finish_btn()
+            .should('have.text', 'Finish')
             .click();
 
         this.editor.select_data_modal_yes_btn()
+            .should('have.text', "yes,I'm Sure")
             .click();
 
-        cy.wait(2000)
+        cy.wait(2000);
     }
 
     addRectangle() {
@@ -460,7 +488,7 @@ export class signa_editor {
             .click();
 
         this.editor.element_rectangle()
-            .click()
+            .click();
 
         this.editor.rectangle()
             .dblclick();
@@ -485,7 +513,7 @@ export class signa_editor {
             .click();
 
         this.editor.rect_setbg()
-            .click()
+            .click();
 
         this.editor.rect_bg_color_red()
             .click();
@@ -493,12 +521,12 @@ export class signa_editor {
         cy.get('body')
             .click(0, 0);
 
-        cy.wait(2000)
+        cy.wait(2000);
 
         cy.get('body')
             .click(0, 0);
 
-        cy.wait(2000)
+        cy.wait(2000);
 
         this.editor.menu_elements()
             .click();
@@ -529,7 +557,7 @@ export class signa_editor {
             .click();
 
         this.editor.rect_setbg()
-            .click()
+            .click();
 
         this.editor.rect_bg_color_red()
             .click();
@@ -537,12 +565,12 @@ export class signa_editor {
         cy.get('body')
             .click(0, 0);
 
-        cy.wait(2000)
+        cy.wait(2000);
 
         cy.get('body')
             .click(0, 0);
 
-        cy.wait(2000)
+        cy.wait(2000);
     }
 
     addCircle() {
@@ -930,7 +958,7 @@ export class signa_editor {
         cy.wait(2000);
 
         this.editor.barcode()
-            .dblclick({force:true});
+            .dblclick({ force: true });
 
         this.editor.barcode_xposition()
             .clear()
