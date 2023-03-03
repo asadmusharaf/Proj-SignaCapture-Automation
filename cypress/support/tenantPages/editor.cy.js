@@ -1002,6 +1002,8 @@ export class signa_editor {
 
         this.editor.editor_preview_btn()
             .click();
+
+        cy.wait(5000);
     }
 
     viewGeneratedImages() {

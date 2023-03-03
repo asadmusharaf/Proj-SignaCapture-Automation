@@ -25,9 +25,9 @@ export class tenant_login {
 
     verifyLogo() {
         this.tlogin.signalogo()
-            .should('have.css', 'width', '250.00001525878906px')
+            .should('have.css', 'width', '250px')
             //.00001525878906
-            .and('have.css', 'height', '50.000003814697266px');
+            .and('have.css', 'height', '50px');
             //.000003814697266
     }
 
@@ -102,8 +102,8 @@ export class tenant_login {
     //Verify header objects after login
     verifyLoginIsSuccessful() {
         this.tlogin.signalogo()
-            .should('have.css', 'width', '250.00001525878906px')
-            .and('have.css', 'height', '50.000003814697266px');
+            .should('have.css', 'width', '250px')
+            .and('have.css', 'height', '50px');
 
         this.tlogin.welcomemsg()
             .should('contain.text', 'Welcome , Asad');
