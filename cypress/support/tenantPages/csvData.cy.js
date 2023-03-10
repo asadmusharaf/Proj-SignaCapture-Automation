@@ -18,6 +18,7 @@ export class csv_data {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
         cy.wait(4000);
+
         this.csv.clicknewjobcard()
             .click();
 
@@ -51,17 +52,18 @@ export class csv_data {
 
         this.csv.upload_btn()
             .click();
-        cy.wait(2000)
+
+        cy.wait(2000);
 
         this.csv.csv_error_close_btn()
             .click();
 
-        cy.wait(2000)
+        cy.wait(2000);
 
         this.csv.upload_btn()
             .click();
 
-        cy.wait(2000)
+        cy.wait(2000);
 
     }
 
