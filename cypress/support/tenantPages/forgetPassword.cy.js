@@ -66,7 +66,6 @@ export class tenant_forget_password {
         this.fpswrd.btn()
             .should('be.visible')
             .click();
-
     }
 
     enterForgetPasswordEmail(fpswrdemail) {
@@ -86,9 +85,7 @@ export class tenant_forget_password {
     }
 
     //Verify forget password confirmation modal
-
     verifyEmailSentModal() {
-
         this.fpswrd.confirm_title()
             .should('have.text', "Done! New password is on its way");
         this.fpswrd.confirm_desc()

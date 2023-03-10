@@ -85,7 +85,8 @@ export class tenant_profile {
             .selectFile('cypress/fixtures/image.png', {
                 action: 'drag-drop'
             });
-        cy.wait(2000)
+
+        cy.wait(2000);
 
         this.profile.upload_btn()
             .should('not.be.disabled');
@@ -93,7 +94,8 @@ export class tenant_profile {
         this.profile.clear_btn()
             .should('not.be.disabled')
             .click();
-        cy.wait(2000)
+
+        cy.wait(2000);
 
         this.profile.upload_btn()
             .should('not.be.enabled');
@@ -104,7 +106,8 @@ export class tenant_profile {
             .selectFile('cypress/fixtures/image.png', {
                 action: 'drag-drop'
             });
-        cy.wait(2000)
+
+        cy.wait(2000);
 
         this.profile.upload_btn()
             .should('not.be.disabled')
@@ -127,6 +130,7 @@ export class tenant_profile {
             .should('not.be.disabled')
             .and('have.text', 'Set Profile Picture')
             .click();
+            
         cy.wait(2000);
     }
 
@@ -167,7 +171,7 @@ export class tenant_profile {
 
     verifyUpdatedProfileTitle(name, lastname) {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
-        
+
         this.profile.title()
             .should('have.text', 'Hello, ' + name + " " + lastname);
         cy.wait(2000);
