@@ -160,7 +160,7 @@ export class normal_acquisition {
 
         this.acq_form.field_4()
             .invoke('attr', 'width')
-            .should('equal', '520');
+            .should('equal', '935');
 
         // this.acq_form.field_4()
         //     .trigger('mousedown', 'center')

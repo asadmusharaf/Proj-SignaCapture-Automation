@@ -7,7 +7,7 @@ export class tenant_forget_password {
         btn: () => cy.xpath("//span[normalize-space()='Forget Password?']"),
         modal_title: () => cy.xpath("//h3[contains(text(),' fix this')]"),
         modal_desc: () => cy.xpath("//p[contains(text(),'Provide your registered email')]"),
-        email: () => cy.xpath("//input[@class='MuiInputBase-input makeStyles-input-34 makeStyles-input-55']"),
+        email: () => cy.xpath("(//input[@placeholder='Email'])[2]"),
         email_blank: () => cy.xpath("//div[@role='dialog']//div//div//div//div//input[@placeholder='Email']"),
         btn_emailpswrd: () => cy.xpath("//span[normalize-space()='Email Password']"),
         btn_cancel: () => cy.xpath("//span[normalize-space()='Cancel']"),

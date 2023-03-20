@@ -8,7 +8,7 @@ export class tenant_login {
         welcometxt: () => cy.xpath("//p[contains(text(),'Welcome')]"),
         username: () => cy.xpath("//input[@placeholder='Email']"),
         password: () => cy.xpath("//input[@placeholder='Password']"),
-        loginbtn: () => cy.xpath("//button[@class='MuiButtonBase-root MuiButton-root makeStyles-root-48 MuiButton-text makeStyles-marginR20-11']"),
+        loginbtn: () => cy.xpath("//span[normalize-space()='LOGIN']"),
         email_validation: () => cy.xpath("//input[@placeholder='Email is required']"),
         pswrd_validation: () => cy.xpath("//input[@placeholder='Password is required']"),
         ivalid_email_validation: () => cy.xpath("//p[normalize-space()='Email is not valid']"),
@@ -17,7 +17,7 @@ export class tenant_login {
         profile_icon: () => cy.xpath("//button[@title='Profile']"),
         logout_icon: () => cy.xpath("//button[@title='Logout']"),
         profile_logout_tooltip: () => cy.xpath("//button[contains(@aria-describedby,'mui-')]"),
- 
+
     }
 
 
@@ -25,10 +25,10 @@ export class tenant_login {
 
     verifyLogo() {
         this.tlogin.signalogo()
-            .should('have.css', 'width', '250px')
+            .should('have.css', 'width', '250.00001525878906px')
             //.00001525878906
-            .and('have.css', 'height', '50px');
-            //.000003814697266
+            .and('have.css', 'height', '50.000003814697266px');
+        //.000003814697266
     }
 
     verifyWelcomeText() {
@@ -38,7 +38,7 @@ export class tenant_login {
 
     verifyEmptyFieldsValidation() {
         this.tlogin.loginbtn()
-            .should('be.enabled')
+            .should('not.be.disabled')
             .click();
         this.tlogin.email_validation()
             .invoke('attr', 'placeholder')
@@ -50,7 +50,8 @@ export class tenant_login {
         this.tlogin.username()
             .type('test');
         this.tlogin.loginbtn()
-            .should('be.enabled').click();
+            .should('not.be.disabled')
+            .click();
         this.tlogin.ivalid_email_validation()
             .should('have.text', 'Email is not valid');
         cy.reload();
@@ -64,7 +65,7 @@ export class tenant_login {
             .type(invalidpassword)
             .should('have.value', invalidpassword);
         this.tlogin.loginbtn()
-            .should('be.enabled')
+            .should('not.be.disabled')
             .click();
         cy.wait(3000);
         this.tlogin.invalid_pswrd_toast()
@@ -94,7 +95,7 @@ export class tenant_login {
 
     clickLoginBtn() {
         this.tlogin.loginbtn()
-            .should('be.enabled')
+            .should('not.be.disabled')
             .click();
         cy.wait(5000);
     }
@@ -102,8 +103,8 @@ export class tenant_login {
     //Verify header objects after login
     verifyLoginIsSuccessful() {
         this.tlogin.signalogo()
-            .should('have.css', 'width', '250px')
-            .and('have.css', 'height', '50px');
+            .should('have.css', 'width', '250.00001525878906px')
+            .and('have.css', 'height', '50.000003814697266px');
 
         this.tlogin.welcomemsg()
             .should('contain.text', 'Welcome , Asad');

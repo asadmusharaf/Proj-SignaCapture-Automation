@@ -1038,6 +1038,9 @@ export class signa_editor {
     }
 
     clickdelicon() {
+
+        cy.wait(3000);
+
         // cy.xpath(this.jd_banner_preview_area).trigger('mouseover');
         // cy.wait(3000);
         this.jd.bnr_icon_del()

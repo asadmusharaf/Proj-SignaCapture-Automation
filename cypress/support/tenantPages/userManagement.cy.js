@@ -183,6 +183,9 @@ export class user_management {
     }
 
     verifyNewlyCreatedUser() {
+
+        cy.wait(3000);
+
         cy.get('table thead').within(function () {
             cy.get('th').eq(0).should('have.text', 'User')
             cy.get('th').eq(1).should('have.text', 'Jobs Assigned')
@@ -212,6 +215,8 @@ export class user_management {
 
     verifyJobsAssignedPage(fname) {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
+
+        cy.wait(4000);
 
         cy.get('table tbody tr:nth-child(1)').within(() => {
             cy.get('td:nth-child(1) a')
