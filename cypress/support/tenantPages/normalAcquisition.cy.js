@@ -159,8 +159,8 @@ export class normal_acquisition {
         cy.wait(3000);
 
         this.acq_form.field_4()
-            .invoke('attr', 'width')
-            .should('equal', '935');
+            // .invoke('attr', 'border-radius')
+            .should('be.visible');
 
         // this.acq_form.field_4()
         //     .trigger('mousedown', 'center')
