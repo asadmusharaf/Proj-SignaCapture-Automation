@@ -169,6 +169,7 @@ describe('Signa Capture Tenant Sanity Suite',
         });
 
         it('Delete a User', function () {
+            um.unAssignJobFromUser();
             um.addusr_clickdelicon();
             um.addusr_clickdelbtn();
             cy.wait(3000);

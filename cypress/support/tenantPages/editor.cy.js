@@ -1003,13 +1003,13 @@ export class signa_editor {
         this.editor.editor_preview_btn()
             .click();
 
-        cy.wait(5000);
+        cy.wait(10000);
     }
 
     viewGeneratedImages() {
         localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
 
-        cy.wait(2000);
+        cy.wait(4000);
         this.prv.link_view_images()
             .should('be.visible')
             .click();

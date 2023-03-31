@@ -42,6 +42,10 @@ export class user_management {
         clickdelicon: () => cy.xpath("//button[@title='Delete']"),
         clickdelbutton: () => cy.xpath("//span[normalize-space()='Delete Job']"),
 
+        //unassign user when deleting and delete user toast validation objects
+        delusr_validation_toast: () => cy.xpath("//div[contains(text(),'User cannot be deleted,Unassign jobs first')]"),
+
+
     }
 
 
@@ -180,6 +184,10 @@ export class user_management {
         this.um.adduser_delbutton()
             .should('be.visible')
             .click();
+    }
+
+    deluser_validation() {
+
     }
 
     verifyNewlyCreatedUser() {
@@ -341,6 +349,35 @@ export class user_management {
         cy.wait(3000);
 
 
+    }
+
+    unAssignJobFromUser() {
+
+        localStorage.setItem("token", "eyJhbGciOiJIUzI1NiJ9.MTg.8iwvGM7bscGDj5D9DoNKtO4vwEYS4W6CU2xOQr1P-Vg");
+
+        cy.get('table tbody tr:nth-child(1)').within(() => {
+            cy.get('td:nth-child(5) button:nth-child(1)')
+                .click();
+        });
+
+        cy.wait(2000);
+
+        this.um.adduser_jobs_dropdown()
+            .should('have.text', 'demo job')
+            .click();
+
+        this.um.adduser_1stlist()
+            .should('be.visible')
+            .click();
+
+        this.um.adduser_emptyclick()
+            .type('{esc}');
+
+        this.um.adduser_auto_generate_pswrd()
+            .click();
+
+        this.um.adduser_save_changes_btn()
+            .click();
     }
 
 

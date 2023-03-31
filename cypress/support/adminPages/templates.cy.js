@@ -331,7 +331,7 @@ export class admin_templates {
         cy.get('table tbody tr').contains('tr', 'Automation').within(() => {
 
             const dayjs = require("dayjs");
-            const todaysDate = dayjs().format("MM DD, YYYY");
+            const todaysDate = dayjs().format("MMM DD, YYYY");
 
             cy.get('td').eq(0).should('have.text', 'Automation Template')
             cy.get('td').eq(1).should('have.text', 'QA Team')
