@@ -7,6 +7,7 @@ import { user_management } from "../support/tenantPages/userManagement.cy"
 import { signa_editor } from "../support/tenantPages/editor.cy"
 import { normal_acquisition } from "../support/tenantPages/normalAcquisition.cy"
 import { csv_data } from "../support/tenantPages/csvData.cy"
+import { client_preview } from "../support/tenantPages/clientPreview.cy"
 
 const tlogin = new tenant_login();
 const fpswrd = new tenant_forget_password();
@@ -16,6 +17,7 @@ const um = new user_management();
 const editor = new signa_editor();
 const nAcq = new normal_acquisition();
 const csv = new csv_data();
+const swc = new client_preview();
 
 describe('Signa Capture Tenant Sanity Suite',
     {
@@ -168,8 +170,13 @@ describe('Signa Capture Tenant Sanity Suite',
 
         });
 
-        it('Delete a User', function () {
+        it('Unassign job from user', function () {
             um.unAssignJobFromUser();
+            cy.wait(3000);
+
+        });
+
+        it('Delete a User', function () {
             um.addusr_clickdelicon();
             um.addusr_clickdelbtn();
             cy.wait(3000);
@@ -218,7 +225,7 @@ describe('Signa Capture Tenant Sanity Suite',
 
         it('Add Rectangle elements to the canvas design', function () {
             editor.addRectangle();
-            
+
         });
 
         it('Add Circle element to the canvas design', function () {
@@ -260,6 +267,44 @@ describe('Signa Capture Tenant Sanity Suite',
             editor.clickbackbutton();
             editor.clickdelicon();
             editor.clickdelbutton();
+
+        });
+
+        it('Select Job For Creating Banner with Signature', function () {
+            editor.clickcreatebannerbtn();
+
+        });
+
+        it('Set Canvas Width and Height', function () {
+            editor.enterwidthandheight();
+            editor.clicksavebtn();
+
+        });
+
+        it('Upload a Background image to canvas', function () {
+            editor.uploadimage();
+
+        });
+
+        it('Generate and Preview the Banner With Signature', function () {
+            editor.previewEditorBanner();
+
+        });
+
+
+        it('Share with client - verify modal and send the email', function () {
+            swc.swc_email();
+
+        });
+
+
+        it('Share with client - Via direct link', function () {
+            swc.swc_link();
+      
+        });
+
+        it('Add Comments to banner preview', function () {
+            swc. client_review_page();
 
         });
 

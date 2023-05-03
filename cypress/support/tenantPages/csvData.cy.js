@@ -11,6 +11,7 @@ export class csv_data {
         yes_card_csv_field: () => cy.xpath("//h6[contains(text(),'Click to select or drag and drop a csv file in this area.')]"),
         yes_card_zip_field: () => cy.xpath("//h6[contains(text(),'Click to select or drag and drop a zip file in this area.')]"),
         upload_btn: () => cy.xpath("//span[normalize-space()='Upload']"),
+        upload_toast_dismiss: () => cy.xpath("//span[normalize-space()='Dismiss me']"),
         csv_error_close_btn: () => cy.xpath("//span[normalize-space()='CLose']"),
     }
 
@@ -53,17 +54,21 @@ export class csv_data {
         this.csv.upload_btn()
             .click();
 
-        cy.wait(2000);
+        cy.wait(4000);
 
-        this.csv.csv_error_close_btn()
+        this.csv.upload_toast_dismiss()
             .click();
 
-        cy.wait(2000);
+        cy.wait(4000);
+        // this.csv.csv_error_close_btn()
+        //     .click();
 
-        this.csv.upload_btn()
-            .click();
+        // cy.wait(2000);
 
-        cy.wait(2000);
+        // this.csv.upload_btn()
+        //     .click();
+
+        // cy.wait(2000);
 
     }
 
