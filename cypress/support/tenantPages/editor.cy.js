@@ -993,7 +993,7 @@ export class signa_editor {
         cy.get('body')
             .click(0, 0);
 
-        cy.wait(2000)
+        cy.wait(4000)
 
     }
 
@@ -1003,7 +1003,7 @@ export class signa_editor {
         this.editor.editor_preview_btn()
             .click();
 
-        cy.wait(10000);
+        cy.wait(20000);
     }
 
     viewGeneratedImages() {
