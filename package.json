@@ -12,8 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "cy-verify-downloads": "^0.1.11",
-    "cypress": "^10.11.0",
+    "cypress": "^13.1.0",
     "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-localstorage-commands": "^2.2.4",
     "cypress-mochawesome-reporter": "^3.2.3",
     "cypress-xpath": "^2.0.1"
   },

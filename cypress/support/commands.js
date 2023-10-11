@@ -29,6 +29,10 @@ Cypress.Commands.add('forceVisit', url => {
       });
 });
 
+
+
 import 'cypress-file-upload';
 
 import "cypress-real-events/support";
+
+import 'cypress-iframe';
